@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
-import { Key } from './Key.js'
+import React, {
+    useState
+} from 'react';
+import {
+    Key
+} from './Key.js'
 import './Piano.css'
 import {
     NOTES,
@@ -8,13 +12,19 @@ import {
 } from '../global/constants.js'
 
 export function Piano() {
-    const song = ['c', 'd', 'e', 'f', 'f', 'f', 'c', 'd', 'c', 'd']
-    
+    const song = ['c', 'd', 'e', 'f', 'f', 'f', 'c', 'd', 'c', 'd', 'd', 'd', 'c', 'g', 'f', 'e', 'e', 'e', 'c', 'd', 'e', 'f', 'f', 'f']
+
     // State variables
     const [pressedKeys, setPressedKeys] = useState([]);
 
-    const [musicIndex, setMusicIndex] = useState(0);
-    
+    const [musicIndex, _setMusicIndex] = useState(0);
+
+    const musicIndexRef = React.useRef(musicIndex);
+    const setMusicIndex = data => {
+        musicIndexRef.current = data;
+        _setMusicIndex(data);
+    }
+
     // Play note helper function
     const playNote = (note) => {
         const noteAudio = new Audio(document.getElementById(note).src);
@@ -29,10 +39,17 @@ export function Piano() {
         const key = event.key;
         if (!pressedKeys.includes(KEY_TO_NOTE[key]) && VALID_KEYS.includes(key)) {
             setPressedKeys((prevPressedKeys) => ([KEY_TO_NOTE[key], ...prevPressedKeys]));
-            playNote(KEY_TO_NOTE[key]);
-                if (KEY_TO_NOTE[key] == song[musicIndex]){
-            setMusicIndex( (prevMusicIndex) => (prevMusicIndex+1))
-        }
+
+            if (KEY_TO_NOTE[key] == song[musicIndexRef.current]) {
+                playNote(KEY_TO_NOTE[key]);
+                let newMusicIndex = musicIndexRef.current + 1;
+
+                if (newMusicIndex >= song.length) {
+                    newMusicIndex = 0;
+                }
+                setMusicIndex(newMusicIndex);
+                console.log(musicIndexRef.current)
+            }
         }
     };
 
@@ -52,12 +69,17 @@ export function Piano() {
             const key = event.target.attributes.note.value;
             if (!pressedKeys.includes(key)) {
                 setPressedKeys((prevPressedKeys) => ([key, ...prevPressedKeys]));
-                playNote(key);
+
             }
-                        if (event.target.attributes.note.value == song[musicIndex]){
-            setMusicIndex( (prevMusicIndex) => (prevMusicIndex+1));
-                            console.log(musicIndex)
-        }
+            if (event.target.attributes.note.value == song[musicIndexRef.current]) {
+                playNote(key);
+                let newMusicIndex = musicIndexRef.current + 1;
+                if (newMusicIndex >= song.length) {
+                    newMusicIndex = 0;
+                }
+                setMusicIndex(newMusicIndex);
+                console.log(musicIndexRef.current)
+            }
         }
     };
 
@@ -68,7 +90,7 @@ export function Piano() {
             //if (index > -1) {
             setPressedKeys((prevPressedKeys) => (prevPressedKeys.splice(index, 1)));
             //}
-            
+
 
         }
     }
