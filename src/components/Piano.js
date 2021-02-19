@@ -11,7 +11,7 @@ import {
     SONGS,
     POSITIONS,
     instruments
-} from '../global/constants2.js'
+} from '../global/constants.js'
 
 export function Piano(props) {
 
