@@ -31,7 +31,23 @@
   flex-grow: 1;
 }
 
-.options button:hover {
+.options button.selected {
+    background: #555;
+    color: white;
+}
+
+.options button:hover, .options button.selected:hover {
     background-color: white;
     color: black;
+}
+
+select {
+	background-color: transparent;
+	width: 100%;
+	border: 1px solid var(--select-border);
+	border-radius: 0.25em;
+	padding: 0.25em 0.5em;
+	font-size: 1rem;
+    color: #444;
+	background-color: #EEE;
 }

@@ -9,8 +9,8 @@
     position: relative;
     color: black;
     font-weight: 600;
-    font-size: 36px;
-    margin-top: 240px;
+    font-size: 28px;
+    margin-top: 250px;
     pointer-events: none;
 }
 
@@ -30,5 +30,5 @@
 }
 
 .key.pressed, .key.flat.pressed, .key.pressed.next, .key.flat.pressed.next {
-    background-color: #00d8ff;
+    background-color: #4da6ff;
 }
