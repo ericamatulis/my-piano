@@ -3,7 +3,7 @@ import './Key.css'
 
 export function Key(props){
     const noteIsFlat = (note) => {
-        return note.length > 1;
+        return note.length > 2;
     }
     
     const keyIsPressed = (note, pressedKeys) => {
@@ -14,6 +14,7 @@ export function Key(props){
     
     const isFlat = noteIsFlat(props.note);
     const isPressed = keyIsPressed(props.note, props.pressedKeys);
+    
     if (isFlat) {
         keyClassName += " flat";
     }

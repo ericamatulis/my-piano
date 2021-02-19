@@ -1,5 +1,6 @@
 import './App.css';
 import {Piano} from './components/Piano.js'
+import {Choices} from './components/Choices.js'
 
 function App() {
   return (
