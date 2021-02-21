@@ -75,8 +75,12 @@ export function Piano(props) {
 
     // Play note helper function
     const playNote = (note) => {
-        const noteAudio = new Audio(document.getElementById(note).src);
-        noteAudio.play();
+        var sounds = document.getElementsByTagName('audio');
+        for(var i=0; i<sounds.length; i++) {
+            sounds[i].pause();
+            sounds[i].currentTime=0;
+        }
+        document.getElementById(note).play()
     }
 
     // Event listeners
@@ -177,9 +181,7 @@ export function Piano(props) {
         return (
             <audio
                 id={note}
-                key={index}
-                src={'../../sounds/' + instruments[instrument] + '/' + note + '.mp3'}
-            />
+                key={index} src={'../../sounds/' + instruments[instrument] + '/' + note + '.mp3'} />
         );
     });
     
@@ -195,7 +197,7 @@ export function Piano(props) {
     // Instruments to render
     const instruments_list = Object.keys(instruments).map((instrument_name, index) => {
         return (
-            <option value={instrument_name}>
+            <option value={instrument_name} key={index}>
                 {instrument_name}
             </option>
         );

@@ -145,11 +145,15 @@ woodblock: 'woodblock-mp3',
 xylophone: 'xylophone-mp3',
 }
 
+
+const instrument_svgs = {"bass":"electric_bass_finger","piano":"acoustic_grand_piano","guitar":"acoustic_guitar_nylon","saxophone":"alto_sax","applause":"applause","cello":"cello","organ":"church_organ","electric-guitar":"electric_guitar_clean","violin":"violin"}
+
 export {
   VALID_KEYS,
   instruments,
   SONGS,
   notes,
   POSITIONS,
+  instrument_svgs
 };
   
