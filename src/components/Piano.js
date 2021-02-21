@@ -10,7 +10,8 @@ import {
     VALID_KEYS,
     SONGS,
     POSITIONS,
-    instruments
+    instruments,
+    instrument_svgs
 } from '../global/constants.js'
 
 export function Piano(props) {
@@ -39,8 +40,8 @@ export function Piano(props) {
 
     
     // State variables 
-    const [instrument, setInstrument] = useState('accordion')
-    const [songTitle, _setSongTitle] = useState("doremi");
+    const [instrument, setInstrument] = useState('xylophone')
+    const [songTitle, _setSongTitle] = useState("Do Re Mi");
     
     const [initKEY_TO_NOTE,initNOTE_TO_KEY, initNOTE_TO_POSITION, initNOTES] = setSongKeys(SONGS[songTitle][0]);
     
@@ -204,9 +205,19 @@ export function Piano(props) {
     });
 
 
+    const instrument_images = Object.keys(instrument_svgs).map((instrument_name, index) => {
+        return (
+            <img src={'../../instruments/' + instrument_name} id={instrument_name} key={index} value={instrument_svgs[instrument_name]} onClick={() => {setInstrument(instrument_svgs[instrument_name]); 
+            var imgs = document.getElementsByTagName('img'); for (var i=0; i<imgs.length;i++) imgs[i].classList.remove("selected");
+            document.getElementById(instrument_name).classList.add("selected")}} className={(instrument_svgs[instrument_name]==instrument) ? "selected" : ""}
+            />
+        );
+    });
+
     return (
         <div>
-            <div>
+        <div id="instrumentImages">{instrument_images}</div>
+            <div hidden>
                 <select className="select" name="instruments" id="instruments" onChange={(event) => setInstrument(event.target.value)}>
                     {instruments_list}
                 </select>

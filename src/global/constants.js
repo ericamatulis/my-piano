@@ -9,9 +9,15 @@ const notes = [
 const POSITIONS = [0,1,2,3,4,6,7,8,9,10,11,12,14,15,16,17,18,20,21,22,23,24,25,26]
 
 const SONGS = {
-    doremi: [[4,5],['C4', 'D4', 'E4', 'F4', 'F4', 'F4', 'C4', 'D4', 'C4', 'D4', 'D4', 'D4', 'C4', 'G4', 'F4', 'E4', 'E4', 'E4', 'C4', 'D4', 'E4', 'F4', 'F4', 'F4']],
-    maryhad: [[3,4],['E4', 'D4', 'C4', 'D4', 'E4', 'E4', 'E4', 'D4', 'D4', 'D4', 'E4', 'G4', 'G4', 'E4', 'D4', 'C4', 'D4', 'E4', 'E4', 'E4', 'E4', 'D4', 'D4', 'E4', 'D4', 'C4']],
-    yesterday: [[3,4],['A3', 'G3', 'G3', 'B3', 'Db4', 'D4', 'E4', 'Gb4', 'G4', 'Gb4', 'E4', 'E4', 'E4', 'E4', 'D4', 'C4', 'B3', 'A3', 'C4', 'B3', 'B3', 'A3', 'G3', 'B3', 'A3', 'E3', 'G3', 'B3', 'B3']]
+    "Do Re Mi": [[4,5],['C4', 'D4', 'E4', 'F4', 'F4', 'F4', 'C4', 'D4', 'C4', 'D4', 'D4', 'D4', 'C4', 'G4', 'F4', 'E4', 'E4', 'E4', 'C4', 'D4', 'E4', 'F4', 'F4', 'F4']],
+    "Mary Had a Little Lamb": [[4,5],['E4', 'D4', 'C4', 'D4', 'E4', 'E4', 'E4', 'D4', 'D4', 'D4', 'E4', 'G4', 'G4', 'E4', 'D4', 'C4', 'D4', 'E4', 'E4', 'E4', 'E4', 'D4', 'D4', 'E4', 'D4', 'C4']],
+    "Yesterday (The Beatles)": [[3,4],['A3', 'G3', 'G3', 'B3', 'Db4', 'D4', 'E4', 'Gb4', 'G4', 'Gb4', 'E4', 'E4', 'E4', 'E4', 'D4', 'C4', 'B3', 'A3', 'C4', 'B3', 'B3', 'A3', 'G3', 'B3', 'A3', 'E3', 'G3', 'B3', 'B3']],
+    "Can't Help Falling in Love": [[3,4],
+                                   ['G3', 'D4', 'G3', 'A3', 'B3', 'C4', 'B3', 'A3', 'D3', 'E3', 'Gb3', 'G3', 'A3', 'B3', 'C4', 'B3', 'A3', 'G3', 'G3', 'D4', 'G3', 'A3', 'B3', 'C4', 'B3', 'A3', 'D3', 'E3', 'Gb3', 'G3', 'A3', 'B3', 'C4', 'B3', 'A3', 'G3',
+                                   'Gb3', 'B3', 'D4', 'Gb4', 'E4', 'F3', 'B3', 'D4', 'Gb4', 'E4',
+                                   'Gb3', 'B3', 'D4', 'Gb4', 'E4', 'D4', 'D4', 'B3', 'D4', 'B3', 'C4',
+                                   'G3', 'D4', 'G3', 'A3', 'B3', 'C4', 'B3', 'A3', 'D3', 'E3', 'Gb3', 'G3', 'A3', 'B3', 'C4', 'B3', 'A3', 'G3']
+                                  ]
 }
 
 const instruments = {
@@ -146,7 +152,8 @@ xylophone: 'xylophone-mp3',
 }
 
 
-const instrument_svgs = {"bass":"electric_bass_finger","piano":"acoustic_grand_piano","guitar":"acoustic_guitar_nylon","saxophone":"alto_sax","applause":"applause","cello":"cello","organ":"church_organ","electric-guitar":"electric_guitar_clean","violin":"violin"}
+const instrument_svgs = {"xylophone.svg":"xylophone","piano.svg":"acoustic_grand_piano","guitar.svg":"acoustic_guitar_nylon","flute.svg":"flute","keyboard.svg":"electric_piano_1","oboe.svg":"oboe","harp.svg":"orchestral_harp","clarinet.svg":"clarinet","accordion.svg":"accordion"}
+//{"bass.svg":"electric_bass_finger","piano.svg":"acoustic_grand_piano","guitar.svg":"acoustic_guitar_nylon","flute.svg":"flute","applause.svg":"applause","cello.svg":"cello","organ.svg":"church_organ","electric-guitar.svg":"electric_guitar_clean","violin.svg":"violin"}
 
 export {
   VALID_KEYS,

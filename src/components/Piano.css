@@ -51,3 +51,55 @@ select {
     color: #444;
 	background-color: #EEE;
 }
+
+#instrumentImages {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/*
+#instrumentImages div {
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+    width: 70px;
+    height: 70px;
+    border-radius: 0.25em;
+    border: 3px solid gray;
+    float: left;
+    background: white;
+}
+*/
+
+#instrumentImages img {
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+    width: 70px;
+    height: 70px;
+    border-radius: 0.25em;
+    border: 3px solid gray;
+    float: left;
+    background: white;
+    filter: saturate(90%);
+}
+
+#instrumentImages img.selected {
+    border: 3px solid darkblue;
+    background: lightblue;
+    filter: saturate(100%);
+/*    filter: brightness(1) invert(.3) sepia(0.6) hue-rotate(150deg) saturate(1000%);*/
+}
+
+
+#instrumentImages img:hover {
+        border: 3px solid lightblue;
+/*
+    background-color: rgb(255,0,0,0);
+    -webkit-filter: hue-rotate(180deg);
+    filter: hue-rotate(180deg);
+    filter: brightness(1) invert(.5) sepia(0.4) hue-rotate(110deg) saturate(1200%);
+*/
+}
+
