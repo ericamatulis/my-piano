@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/my-piano/static/css/main.4dc37a1d.chunk.css",
-    "main.js": "/my-piano/static/js/main.00945b88.chunk.js",
-    "main.js.map": "/my-piano/static/js/main.00945b88.chunk.js.map",
+    "main.js": "/my-piano/static/js/main.4c606fcf.chunk.js",
+    "main.js.map": "/my-piano/static/js/main.4c606fcf.chunk.js.map",
     "runtime-main.js": "/my-piano/static/js/runtime-main.783d6207.js",
     "runtime-main.js.map": "/my-piano/static/js/runtime-main.783d6207.js.map",
     "static/js/2.e5a55fd9.chunk.js": "/my-piano/static/js/2.e5a55fd9.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.783d6207.js",
     "static/js/2.e5a55fd9.chunk.js",
     "static/css/main.4dc37a1d.chunk.css",
-    "static/js/main.00945b88.chunk.js"
+    "static/js/main.4c606fcf.chunk.js"
   ]
 }
