@@ -91,7 +91,7 @@ export function Piano(props) {
         }
         const key = event.key;
         if (!pressedKeys.includes(KEY_TO_NOTE[key]) && VALID_KEYS.includes(key)) {
-            setPressedKeys((prevPressedKeys) => ([KEY_TO_NOTE[key], ...prevPressedKeys]));
+            setPressedKeys(() => ([KEY_TO_NOTE[key]]));
 
             if (KEY_TO_NOTE[key] == SONGS[songTitleRef.current][1][musicIndexRef.current]) {
                 playNote(KEY_TO_NOTE[key]);
@@ -101,6 +101,7 @@ export function Piano(props) {
                     newMusicIndex = 0;
                 }
                 setMusicIndex(newMusicIndex);
+                //console.log(pressedKeys);
                 console.log(musicIndexRef.current)
                 console.log(SONGS[songTitleRef.current][1])
                 console.log(songTitleRef.current)
@@ -109,10 +110,7 @@ export function Piano(props) {
     };
 
     const handleKeyUp = (event) => {
-        const index = pressedKeys.indexOf(KEY_TO_NOTE[event.key]);
-        //if (index > -1) {
-        setPressedKeys((prevPressedKeys) => (prevPressedKeys.splice(index, 1)));
-        //}
+        setPressedKeys([]);
 
     }
 
@@ -123,7 +121,7 @@ export function Piano(props) {
         if (event.target.className.includes("key")) {
             const key = event.target.attributes.note.value;
             if (!pressedKeys.includes(key)) {
-                setPressedKeys((prevPressedKeys) => ([key, ...prevPressedKeys]));
+                setPressedKeys(() => ([key]));
 
             }
             if (event.target.attributes.note.value == SONGS[songTitleRef.current][1][musicIndexRef.current]) {
@@ -140,13 +138,7 @@ export function Piano(props) {
 
     const handleMouseUp = (event) => {
         if (event.target.className.includes("key")) {
-
-            const index = pressedKeys.indexOf(event.target.attributes.note.value);
-            //if (index > -1) {
-            setPressedKeys((prevPressedKeys) => (prevPressedKeys.splice(index, 1)));
-            //}
-
-
+            setPressedKeys([]);
         }
     }
 
