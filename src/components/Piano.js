@@ -182,7 +182,7 @@ export function Piano(props) {
         return (
             <audio
                 id={note}
-                key={index} src={'my-piano/sounds/' + instruments[instrument] + '/' + note + '.mp3'} />
+                key={index} src={'/my-piano/sounds/' + instruments[instrument] + '/' + note + '.mp3'} />
         );
     });
     
@@ -207,7 +207,7 @@ export function Piano(props) {
 
     const instrument_images = Object.keys(instrument_svgs).map((instrument_name, index) => {
         return (
-            <img src={'my-piano/instruments/' + instrument_name} id={instrument_name} key={index} value={instrument_svgs[instrument_name]} onClick={() => {setInstrument(instrument_svgs[instrument_name]); 
+            <img src={'/my-piano/instruments/' + instrument_name} id={instrument_name} key={index} value={instrument_svgs[instrument_name]} onClick={() => {setInstrument(instrument_svgs[instrument_name]); 
             var imgs = document.getElementsByTagName('img'); for (var i=0; i<imgs.length;i++) imgs[i].classList.remove("selected");
             document.getElementById(instrument_name).classList.add("selected")}} className={(instrument_svgs[instrument_name]==instrument) ? "selected" : ""}
             />
