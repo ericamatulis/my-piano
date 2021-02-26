@@ -24,6 +24,13 @@
     z-index: 2;
 }
 
+.key.inactive .key-text {
+    color: gray;
+}
+
+.key.inactive {
+    background-color: #DDD;
+}
 
 .key.next, .key.flat.next {
     background-color: yellow;
@@ -31,4 +38,8 @@
 
 .key.pressed, .key.flat.pressed, .key.pressed.next, .key.flat.pressed.next {
     background-color: #4da6ff;
+}
+
+.key.inactive.pressed {
+    background-color: darkgray;
 }

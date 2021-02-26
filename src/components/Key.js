@@ -10,10 +10,19 @@ export function Key(props){
         return pressedKeys.includes(note);
     }
     
+    const keyIsActive = (note, availableKeys) => {
+        return availableKeys.includes(note);
+    }
+    
     let keyClassName = "key";
     
     const isFlat = noteIsFlat(props.note);
     const isPressed = keyIsPressed(props.note, props.pressedKeys);
+    const isActive = keyIsActive(props.note, props.availableKeys);
+    
+    if (!isActive) {
+        keyClassName += " inactive";
+    }
     
     if (isFlat) {
         keyClassName += " flat";

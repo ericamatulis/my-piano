@@ -180,6 +180,7 @@ export function Piano(props) {
                 note={note}
                 pressedKeys={pressedKeys}
                 nextNote = {SONGS[songTitle][1][musicIndex]}
+                availableKeys={[...new Set(SONGS[songTitle][1])]}
             />
         );
     });
